@@ -10,6 +10,7 @@ class Main_controller extends CI_Controller
 		parent::__construct();
 		$this->load->library('session');
         $this->load->model('Contact_us_model','Con_model');
+        $this->load->model('Request_quote_model','Request_quote_model');
  
     }
 	public function index()
@@ -68,24 +69,20 @@ class Main_controller extends CI_Controller
 		$this->load->view('Home_page_folder/Home_footer');
 	}
 
+	public function Request_view_model_controller()
+	{
+		
+		$this->Request_quote_model->Save_request_quote();
+
+		//$this->load->view('Request_view');
+		//$this->load->view('Home_page_folder/Header_view');	
+		//$this->load->view('Home_page_folder/Home_footer');
+	}
+
 	 
-public function send()
-{
-	
+		public function send()
+		{
+				
+		}
 
-
-
-
-
-
-
-
-
-	
-}
-
-	   
-
-	   
-	   
 }

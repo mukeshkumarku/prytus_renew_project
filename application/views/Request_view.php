@@ -28,8 +28,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="alert alert-dismissible alert-success">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Well done!</strong> You successfully Send <a href="#" class="alert-link">this important alert
-            message</a>.
+        <!--strong>Well done!</strong> You successfully Send <a href="#" class="alert-link">this important alert
+            message</a-->
+
+             <?php if($this->session->flashdata('success')){?>
+                
+                    <p><?php echo $this->session->flashdata('success');?></p>
+                  
+                  <?php }?>
     </div>
     <div class="alert alert-dismissible alert-success">
         <button type="button" class="close" data-dismiss="alert">&times;</button>

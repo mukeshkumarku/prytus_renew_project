@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,9 +69,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
 
             <div class="logo float-left">
-                <h1 class="text-light"><a href="<?php echo site_url('Main_controller/index');?>">
-                        <span><img src="<?php echo base_url('assets/img/logo_prytus _final.jpg' );?>" width="130"
-                                height="300" class="img-fluid" </span></a>
+                <h1 class="text-light">
+                    <a href="<?php echo site_url('Main_controller/index');?>">
+                        <span>
+                            <img src="<?php echo base_url('assets/img/logo_prytus _final.jpg' );?>" width="130"
+                                height="300" class="img-fluid">
+                        </span></a>
                 </h1>
 
                 <!-- Uncomment below if you prefer to use an image logo -->
@@ -90,12 +94,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </i> +91 9650477482</a></li>
 
 
+                    <li>
+                        <a  class="button" data-toggle="modal" data-target="#modalPoll-1"
+                            id="myBtn">Request A Quote</a>
+                    </li>
+
+
                     <!-- <li>
-                        <a href="<?php echo site_url('Main_controller/Contact_view_controller');?>" class="button"
+                        <a href="<?php //echo site_url('Main_controller/Contact_view_controller');?>" class="button"
                             id="myBtn">Request A Quote</a>
                     </li> -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPoll-1">Request
-                        A Quote</button>
+
+
+                    
+                    <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPoll-1">Request
+                        A Quote</button-->
 
                 </ul>
 
@@ -132,33 +145,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <!-- Start Form part -->
                         <div class="modal-body" style="padding:40px 50px;">
-                            <form role="form" action="<?php echo base_url(); ?>Main_controller/Request_view_controller"
+                            <form role="form" action="<?php echo site_url('Main_controller/Request_view_model_controller');?>"
                                 method="post" id="form1">
+
+            
                                 <div class="form-group">
                                     <label for="fname"><span class="glyphicon glyphicon-user"></span>
-                                        First name</label>
-                                    <input type="text" name="fname" class="form-control" id="Fname"
-                                        placeholder="Enter firstName">
+                                        Name</label>
+                                    <input type="text" name="Fname" class="form-control" id="Fname"  
+                                        placeholder="Enter Your Name" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email"><span class="glyphicon glyphicon-email" required></span>
                                         Email</label>
-                                    <input type="email" name="from" class="form-control" id="email"
-                                        placeholder="Enter email">
+                                    <input type="email" name="email" class="form-control" id="email"
+                                        placeholder="Enter email" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone"><span class="glyphicon glyphicon-user"></span>
                                         Phone</label>
                                     <input type="text" name="phone" class="form-control" id="phone"
-                                        placeholder="Enter phone">
+                                        placeholder="Enter phone" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="services"><span class="glyphicon glyphicon-user"></span>
                                         Services</label>
-                                    <select class="custom-select" required>
+                                    <select class="custom-select" required name="services" id="services" >
                                         <option selected="">Open this select menu</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -166,10 +181,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </select>
                                 </div>
                                 <div class="md-form">
-                                    <textarea type="text" id="form79textarea" name="message"
+                                       <label for="message">Your message</label>
+                                    <textarea type="text" id="message" name="message"
                                         class="md-textarea form-control" rows="3"></textarea>
-                                    <label for="form79textarea">Your message</label>
-                                </div>
+                                
+                                </div><br>
 
                                 <button type="submit" class="btn btn-primary waves-effect waves-light" form="form1"
                                     value="Submit">Submit</button>
