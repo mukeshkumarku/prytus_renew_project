@@ -96,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <li>
                         <a  class="button" data-toggle="modal" data-target="#modalPoll-1"
-                            id="myBtn">Request A Quote</a>
+                            id="myBtn" >Request A Quote</a>
                     </li>
 
 
